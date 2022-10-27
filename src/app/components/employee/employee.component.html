@@ -1,0 +1,119 @@
+<div class='new_employee' >
+   <div class='icon' (click)="openModalCreateUpdate('create', '')"> 
+      <div class='add'></div>
+      <div class='text'>ADD EMPLOYEE</div>
+   </div>
+</div> 
+<div class="modal" [ngClass]="openModalCreate == true ? 'showModal' : 'hideModal'">
+  <div class="modal-content">
+      <div class='loading' [hidden]="!tmpEmployee.isLoading">
+         <img src="./../../../assets/images/loading.gif" />
+      </div>
+
+      <div class='success' [hidden]="!tmpEmployee.isSuccess">
+         <img src="./../../../assets/images/success.gif" />
+      </div>
+   
+      <div class="modal-header">
+         <div class="modal-title"><span>{{actionMode === 'create' ? 'Create' : 'Update'}}</span> employee</div>
+         <div class="close-modal icon" (click)="closeModalCreateUpdate()"></div>         
+      </div>
+
+      <div class="modal-body">
+        <table>
+              <tr>
+                  <td class='title'>Employee name :</td> 
+                  <td>
+                        <input type="text" [value]="tmpEmployee.name" (change)="onChangeNameCreate($event.target.value)" autocomplete='off'/>                     
+                  </td>
+              </tr>
+              <tr>
+                <td colspan='2'>
+                   <div class='spacing'></div>
+                </td>
+              </tr>
+              
+              <tr>
+                <td></td>
+                <td class='right'>
+                    <button [hidden]="actionMode!='create'" type="button" (click)="createEmployee()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                      Create
+                    </button>
+                    <button [hidden]="actionMode!='update'" type="button" (click)="updateEmployee()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                      Update
+                    </button>
+                </td>
+              </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+      </div>
+  </div>
+</div>
+
+<div class="modal" [ngClass]="openModalDelete == true ? 'showModal' : 'hideModal'">
+  <div class="modal-content">
+      <div class='loading' [hidden]="!isLoading">
+         <img src="./../../../assets/images/loading.gif" />
+      </div>
+
+      <div class='success' [hidden]="!isSuccess">
+         <img src="./../../../assets/images/success.gif" />
+      </div>
+   
+      <div class="modal-header">
+         <div class="modal-title">Delete employee:  <span class='bold'>{{tmpEmployee.name}}</span></div>
+         <div class="close-modal icon" (click)="toggleModalDelete()"></div>         
+      </div>
+
+      <div class="modal-body">
+        <p class='comfirm-text-title'>Are you sure you wanna delete this employee?</p>
+        <p class='comfirm-text-description'>This change will reflect in the employee list.</p>
+      </div>
+      <div class="modal-footer">
+         <div class='confirm-buttons'> 
+            <button type="button" (click)="toggleModalDelete()" class="btn btn-inverse" data-toggle="button" aria-pressed="false" autocomplete="off">
+               Cancel
+            </button>
+            <button type="button" (click)="deleteEmployee()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+               Confirm
+            </button>
+         </div>
+      </div>
+  </div>
+</div>
+
+<div class='employees'>
+   <div 
+         *ngFor="let employee of employees" 
+         class='employee'     
+   >
+      <div class='loading' [hidden]="!employee.isLoading">
+         <img src="./../../../assets/images/loading.gif" />
+      </div>
+
+      <div class='success' [hidden]="!employee.isSuccess">
+         <img src="./../../../assets/images/success.gif" />
+      </div>
+
+      <div class="employee__container">
+        <div class='employee-picture'>
+          <img src="https://avatars.dicebear.com/api/male/1.svg{{employee.id}}.svg">
+        </div>
+        <div class='employee-name'>
+          {{employee.name}}
+        </div>
+        <div class='employee__actions'>
+          <div class='employee__edit' (click)="openModalCreateUpdate('update', employee)">
+              <div class='edit'></div>
+          </div>
+          <div class='employee__trash'>
+              <div class='trash'  (click)="openModalDeleteEmployee(employee)"></div>
+          </div>
+        </div>
+      </div>
+
+
+   </div>
+</div>
+  

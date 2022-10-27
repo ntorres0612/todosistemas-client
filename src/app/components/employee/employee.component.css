@@ -1,0 +1,112 @@
+.new_employee {
+    width: 100%;
+    height: 80px;
+}
+
+.add {
+    width: 32px;
+    height: 32px;
+    background-image: url(./../../../assets/images/add.svg);
+}
+
+.showModal {
+    display: block;
+}
+
+.hideModal {
+    display: none;
+}
+
+.spacing {
+    height: 32px;
+}
+
+.employees {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.employee {
+    width: 350px;
+    margin: 5px;
+    transition: 0.3s;
+    position: relative;
+    border-radius: 15px;
+}
+
+.employee__container {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.employee__container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.employee-picture {
+    width: 64px;
+    height: 64px;
+    background-color: rgb(246 246 246);
+    border-radius: 50%;
+    border: 4px solid #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.employee-picture img {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+}
+
+.employee-name {
+    padding-left: 10px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.employee__actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.employee__edit {
+    width: 32px;
+    height: 32px;
+}
+
+.employee__edit:hover {
+    cursor: pointer;
+}
+
+
+.employee__trash {
+    width: 24px;
+    height: 32px;
+}
+
+.employee__trash:hover {
+    cursor: pointer;
+}
+
+.edit {
+    width: 24px;
+    height: 24px;
+    background-image: url(./../../../assets/images/edit.svg);
+}
+
+.trash {
+    width: 24px;
+    height: 24px;
+    background-image: url(./../../../assets/images/trash.svg);
+}

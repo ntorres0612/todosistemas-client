@@ -1,0 +1,5 @@
+https://material.io/tools/icons/?icon=add_circle&style=baseline
+https://github.com/callicoder/spring-boot-mysql-rest-api-tutorial/blob/master/src/main/java/com/example/easynotes/controller/NoteController.java
+https://blog.ng-classroom.com/blog/ionic2/validations-in-forms/
+http://localhost:8080/h2-console/login.do?jsessionid=402a59862db3badfbf12b48235001772
+http://localhost:4200
